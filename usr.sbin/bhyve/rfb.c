@@ -982,7 +982,7 @@ rfb_init(char *hostname, int port, int wait, char *password)
 
 	rc->password = password;
 
-	snprintf(servname, sizeof(servname), "%d", port ? port : 5900);
+	snprintf(servname, sizeof(servname), "%d", htons(port));
 
 	if (!hostname || strlen(hostname) == 0)
 #if defined(INET)
